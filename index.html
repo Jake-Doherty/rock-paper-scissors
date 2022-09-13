@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
-</head>
+    <body>
+        <header>
+            <img src="/assets/html_css_js.png" />
+            <h1>F.E.O.S.P.B.</h1>
+            <h2>(Final Evolution Original Starter Pokemon Battle)</h2>
+        </header>
 
-<body>
-    <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <section id="scoreboard">
+                <h2>Battle Results</h2>
+                <ul class="scores">
+                    <li>wins: <span id="wins-display"></span></li>
+                    <li>losses: <span id="losses-display"></span></li>
+                    <li>total: <span id="total-display"></span></li>
+                </ul>
+            </section>
+        </main>
+    </body>
 </html>
