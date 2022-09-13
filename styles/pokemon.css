@@ -1,0 +1,7 @@
+#pokemon {
+    display: grid;
+}
+
+.poke-picture {
+    width: 100px;
+}
