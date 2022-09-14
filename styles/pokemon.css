@@ -7,4 +7,19 @@
 }
 
 .scores {
+    width: fit-content;
+    padding: 5px;
+    display: flex;
+}
+
+.scores li {
+    border: 1px solid black;
+}
+
+span {
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
 }

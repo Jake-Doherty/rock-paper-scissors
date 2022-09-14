@@ -4,7 +4,7 @@
 let gameState = 'choose';
 let choices = '';
 let compChoices = '';
-let result = ;
+let result = '';
 
 let battles = 0;
 let wins = 0;
@@ -19,11 +19,13 @@ const winsDisplay = document.getElementById('wins-display');
 const totalDisplay = document.getElementById('total-display');
 const lossesDisplay = document.getElementById('losses-display');
 
-
 /* Component */
 // get DOM
+
 // display
 // event listeners
+
+// Results
 
 /* Run page load code */
 loadPage();
