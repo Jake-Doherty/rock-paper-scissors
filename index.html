@@ -20,6 +20,12 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
@@ -31,7 +37,7 @@
         <header>
             <img src="/assets/html_css_js.png" />
             <h1>F.E.O.S.P.B.</h1>
-            <h2>(Final Evolution Original Starter Pokemon Battle)</h2>
+            <h3>(Final Evolution Original Starter Pokemon Battle)</h3>
         </header>
 
         <main>
@@ -49,13 +55,13 @@
                     Choose your Pokemon!
                     <div id="pokemon-choices">
                         <button id="charizard">
-                            <img class="poke-picture" src="assets\Charizard.png" alt="charizard" />
+                            <img class="poke-picture" src="assets\charizard.png" alt="charizard" />
                         </button>
                         <button id="blastoise">
-                            <img class="poke-picture" src="assets\Blastoise.png" alt="blastoise" />
+                            <img class="poke-picture" src="assets\blastoise.png" alt="blastoise" />
                         </button>
                         <button id="venusaur">
-                            <img class="poke-picture" src="assets\Venusaur.png" alt="venusaur" />
+                            <img class="poke-picture" src="assets\venusaur.png" alt="venusaur" />
                         </button>
                     </div>
                 </label>
@@ -65,30 +71,34 @@
                         <img
                             id="comp-ven"
                             class="poke-picture"
-                            src="assets\Venusaur.png"
+                            src="assets\venusaur.png"
                             alt="venusaur"
                         />
                         <img
                             id="comp-blast"
                             class="poke-picture"
-                            src="assets\Blastoise.png"
+                            src="assets\blastoise.png"
                             alt="blastoise"
                         />
                         <img
                             id="comp-char"
                             class="poke-picture"
-                            src="assets\Charizard.png"
+                            src="assets\charizard.png"
                             alt="charizard"
                         />
                     </div>
                 </label>
             </section>
             <section class="hidden" id="results">
-                <img id="user-pokemon" src="image" alt="user-pokemon" />
-                <strong id="vers">VS</strong>
-                <img id="comuter-pokemon" src="image" alt="computer-pokemon" />
+                <div id="results-final">
+                    <img id="user-pokemon" src="image" alt="user-pokemon" />
+                    <strong id="vers">VS!</strong>
+                    <img id="computer-pokemon" src="image" alt="computer-pokemon" />
+                </div>
                 <h3 id="battle-result"></h3>
-                <button id="play-again">Play Again?</button>
+                <div class="play-again-button-container">
+                    <img id="play-again" src="assets\Pokemon_continue.png" alt="continue-pokemon" />
+                </div>
             </section>
         </main>
     </body>

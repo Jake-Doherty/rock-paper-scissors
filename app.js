@@ -33,9 +33,17 @@ function choosePokemon(userChoice) {
 
 function moveComp(compChoice) {
     if (compChoice === 'charizard') {
-        compChar.classList.add('comp-choose');
+        compChar.classList.add('comp-choose-char');
         compBlast.classList.add('hidden');
         compVen.classList.add('hidden');
+    } else if (compChoice === 'blastoise') {
+        compBlast.classList.add('comp-choose-blast');
+        compChar.classList.add('hidden');
+        compVen.classList.add('hidden');
+    } else if (compChoice === 'venusaur') {
+        compVen.classList.add('comp-choose-ven');
+        compChar.classList.add('hidden');
+        compBlast.classList.add('hidden');
     }
 }
 
@@ -46,30 +54,37 @@ const selectWinner = (trainerChoice, compChoice) => {
         result = 'draw';
         draws++;
         drawsDisplay.textContent = draws;
+        battleResult.textContent = 'Draw!';
     } else if (trainerChoice === 'charizard' && compChoice === 'venusaur') {
         result = 'win';
         wins++;
         winsDisplay.textContent = wins;
+        battleResult.textContent = 'You Win!';
     } else if (trainerChoice === 'venusaur' && compChoice === 'blastoise') {
         result = 'win';
         wins++;
         winsDisplay.textContent = wins;
+        battleResult.textContent = 'You Win!';
     } else if (trainerChoice === 'blastoise' && compChoice === 'charizard') {
         result = 'win';
         wins++;
         winsDisplay.textContent = wins;
+        battleResult.textContent = 'You Win!';
     } else if (trainerChoice === 'venusaur' && compChoice === 'charizard') {
         result = 'lose';
         losses++;
         lossesDisplay.textContent = losses;
+        battleResult.textContent = 'You Lose!';
     } else if (trainerChoice === 'blastoise' && compChoice === 'venusaur') {
         result = 'lose';
         losses++;
         lossesDisplay.textContent = losses;
+        battleResult.textContent = 'You Lose!';
     } else if (trainerChoice === 'charizard' && compChoice === 'blastoise') {
         result = 'lose';
         losses++;
         lossesDisplay.textContent = losses;
+        battleResult.textContent = 'You Lose!';
     }
 
     return result;
@@ -85,20 +100,30 @@ const drawsDisplay = document.getElementById('draws-display');
 
 /* Component */
 // get DOM
+const userChoicesDiv = document.getElementById('pokemon-choices');
+const compStarters = document.getElementById('comp-starters');
 const char = document.getElementById('charizard');
 const blast = document.getElementById('blastoise');
 const ven = document.getElementById('venusaur');
 const compChar = document.getElementById('comp-char');
 const compBlast = document.getElementById('comp-blast');
 const compVen = document.getElementById('comp-ven');
+const pokemonSection = document.getElementById('pokemon');
 
 // display
 function displayChoices() {
     if (gameState === 'choose') {
+        pokemonSection.classList.remove('display-none');
+        userChoicesDiv.classList.remove('hidden');
+        compStarters.classList.remove('hidden');
+        resultSection.classList.remove('reveal', 'move-results');
         resultSection.classList.add('hidden');
-        char.classList.remove('choose');
-        blast.classList.remove('choose');
-        ven.classList.remove('choose');
+        char.classList.remove('choose-char');
+        blast.classList.remove('choose-blast');
+        ven.classList.remove('choose-ven');
+        compChar.classList.remove('comp-choose-char');
+        compBlast.classList.remove('comp-choose-blast');
+        compVen.classList.remove('comp-choose-ven');
         char.classList.remove('hidden');
         blast.classList.remove('hidden');
         ven.classList.remove('hidden');
@@ -110,7 +135,7 @@ function displayChoices() {
 
 // event listeners
 char.addEventListener('click', () => {
-    char.classList.add('choose');
+    char.classList.add('choose-char');
     blast.classList.add('hidden');
     ven.classList.add('hidden');
     trainerChoice = 'charizard';
@@ -121,7 +146,7 @@ char.addEventListener('click', () => {
 });
 
 blast.addEventListener('click', () => {
-    blast.classList.add('choose');
+    blast.classList.add('choose-blast');
     char.classList.add('hidden');
     ven.classList.add('hidden');
     choosePokemon('blastoise');
@@ -129,7 +154,7 @@ blast.addEventListener('click', () => {
     displayResults();
 });
 ven.addEventListener('click', () => {
-    ven.classList.add('choose');
+    ven.classList.add('choose-ven');
     blast.classList.add('hidden');
     char.classList.add('hidden');
     choosePokemon('venusaur');
@@ -151,8 +176,20 @@ playAgainButton.addEventListener('click', () => {
 
 function displayResults() {
     if (gameState === 'results') {
-        resultSection.classList.remove('hidden');
-        // selectWinner();
+        setTimeout(() => {
+            userChoicesDiv.classList.add('hidden');
+            compStarters.classList.add('hidden');
+        }, '300');
+        pokemonSection.classList.add('display-none');
+        userPokemon.src = './assets/' + trainerChoice + '.png';
+        compPokemon.src = './assets/' + compChoice + '.png';
+        resultSection.classList.add('move-results');
+        setTimeout(() => {
+            resultSection.classList.add('reveal');
+        }, '500');
+        setTimeout(() => {
+            resultSection.classList.remove('hidden');
+        }, '600');
     }
 }
 
