@@ -1,40 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="//db.onlinewebfonts.com/c/900f8add35323c44ee840c611ed9a7a5?family=Pokemon+Classic"
+            rel="stylesheet"
+            type="text/css"
+        />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="styles\pokemon.css" />
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
-</head>
+    <body>
+        <header>
+            <img src="/assets/html_css_js.png" />
+            <h1 id="event-title">F.E.O.S.P.B.</h1>
+            <h3>(Final Evolution Original Starter Pokemon Battle!)</h3>
+        </header>
 
-<body>
-    <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+        <main>
+            <div id="for-gapping">
+                <section id="scoreboard">
+                    <h2>Battle Results</h2>
+                    <ul class="scores">
+                        <li>wins: <span id="wins-display"></span></li>
+                        <li>losses: <span id="losses-display"></span></li>
+                        <li>draws: <span id="draws-display"></span></li>
+                        <li>total: <span id="total-display"></span></li>
+                    </ul>
+                </section>
+                <section id="pokemon">
+                    <label>
+                        Choose your Pokemon!
+                        <div id="pokemon-choices">
+                            <button id="charizard">
+                                <img
+                                    class="poke-picture"
+                                    src="assets\charizard.png"
+                                    alt="charizard"
+                                />
+                            </button>
+                            <button id="blastoise">
+                                <img
+                                    class="poke-picture"
+                                    src="assets\blastoise.png"
+                                    alt="blastoise"
+                                />
+                            </button>
+                            <button id="venusaur">
+                                <img
+                                    class="poke-picture"
+                                    src="assets\venusaur.png"
+                                    alt="venusaur"
+                                />
+                            </button>
+                        </div>
+                    </label>
+                    <label>
+                        Opponent
+                        <div id="comp-starters">
+                            <img
+                                id="comp-ven"
+                                class="poke-picture"
+                                src="assets\venusaur.png"
+                                alt="venusaur"
+                            />
+                            <img
+                                id="comp-blast"
+                                class="poke-picture"
+                                src="assets\blastoise.png"
+                                alt="blastoise"
+                            />
+                            <img
+                                id="comp-char"
+                                class="poke-picture"
+                                src="assets\charizard.png"
+                                alt="charizard"
+                            />
+                        </div>
+                    </label>
+                </section>
+                <section class="hidden" id="results">
+                    <div id="results-final">
+                        <img id="user-pokemon" src="image" alt="user-pokemon" />
+                        <strong id="vers">VS!</strong>
+                        <img id="computer-pokemon" src="image" alt="computer-pokemon" />
+                    </div>
+                    <h3 id="battle-result"></h3>
+                    <div class="play-again-button-container">
+                        <img
+                            id="play-again"
+                            src="assets\Pokemon_continue.png"
+                            alt="continue-pokemon"
+                        />
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
 </html>
