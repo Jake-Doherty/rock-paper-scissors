@@ -1,9 +1,52 @@
+/* * {
+    border: 1px solid black;
+} */
+
+label {
+    text-align: center;
+}
+
 #pokemon {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+#pokemon-choices {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    justify-items: center;
+}
+
+#comp-starters {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    transform: scale(110%);
+    align-items: center;
 }
 
 .poke-picture {
+    width: 75px;
+}
+
+#charizard {
     width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#blastoise {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#venusaur {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#scoreboard {
+    background-color: rgb(189, 72, 72);
 }
 
 .scores {
@@ -22,4 +65,9 @@ span {
 
 .hidden {
     display: none;
+}
+
+.choose {
+    transform: translateX(100px);
+    transition: all 300ms ease-out;
 }
