@@ -113,6 +113,10 @@ const pokemonSection = document.getElementById('pokemon');
 // display
 function displayChoices() {
     if (gameState === 'choose') {
+        winsDisplay.textContent = wins;
+        totalDisplay.textContent = battles;
+        lossesDisplay.textContent = losses;
+        drawsDisplay.textContent = draws;
         pokemonSection.classList.remove('display-none');
         userChoicesDiv.classList.remove('hidden');
         compStarters.classList.remove('hidden');
@@ -153,6 +157,7 @@ blast.addEventListener('click', () => {
     gameState = 'results';
     displayResults();
 });
+
 ven.addEventListener('click', () => {
     ven.classList.add('choose-ven');
     blast.classList.add('hidden');
