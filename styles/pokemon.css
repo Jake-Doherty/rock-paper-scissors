@@ -64,7 +64,8 @@ span {
 }
 
 .hidden {
-    display: none;
+    opacity: 0%;
+    transition: all 250ms ease-out;
 }
 
 .choose {

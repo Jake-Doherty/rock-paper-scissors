@@ -26,8 +26,17 @@ function choosePokemon(userChoice) {
     battles++;
     trainerChoice = userChoice;
     compChoice = getRandomItem(pokeChoices);
+    moveComp(compChoice);
     selectWinner(trainerChoice, compChoice);
     totalDisplay.textContent = battles;
+}
+
+function moveComp(compChoice) {
+    if (compChoice === 'charizard') {
+        compChar.classList.add('comp-choose');
+        compBlast.classList.add('hidden');
+        compVen.classList.add('hidden');
+    }
 }
 
 const selectWinner = (trainerChoice, compChoice) => {
@@ -102,10 +111,8 @@ function displayChoices() {
 // event listeners
 char.addEventListener('click', () => {
     char.classList.add('choose');
-    setTimeout(() => {
-        blast.classList.add('hidden');
-        ven.classList.add('hidden');
-    }, '500');
+    blast.classList.add('hidden');
+    ven.classList.add('hidden');
     trainerChoice = 'charizard';
     compChoice = getRandomItem(pokeChoices);
     choosePokemon('charizard');
